@@ -72,7 +72,7 @@ public class Customer {
         customerDataSource.registerRentalPoint(name, frequentRenterPoints);
 
         // レンタルの通知
-        rentalNotificationTransfer.notice(name, rentals, result);
+        rentalNotificationTransfer.notice(name, rentals);
 
         return rentalId;
     }

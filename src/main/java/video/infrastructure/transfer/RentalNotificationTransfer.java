@@ -9,7 +9,11 @@ import java.util.List;
 public class RentalNotificationTransfer {
 
     private static final Logger logger = LoggerFactory.getLogger(RentalNotificationTransfer.class);
-    public void notice(String customerName, List<Rental> rentals, String result) {
-        logger.info(result);
+    public void notice(String customerName, List<Rental> rentals) {
+        StringBuilder result = new StringBuilder();
+        for (Rental rental : rentals) {
+            result.append("Movie: " + rental.getMovie().getTitle() + " Days Rented: " + rental.getDaysRented() + " ");
+        }
+        logger.info(customerName + ": " + result);
     }
 }
