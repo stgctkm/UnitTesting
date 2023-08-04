@@ -30,7 +30,6 @@ public class Customer {
     public int rentalMovies() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
-        String result = "Rental Record for " + getName() + "\n";
         for (Rental each : rentals) {
             double thisAmount = 0;
             // 一行ごとに金額を計算
@@ -54,16 +53,8 @@ public class Customer {
             // 新作を二日以上借りた場合はボーナスポイント
             if ((each.getMovie().getPriceType() == PriceType.NEW_RELEASE) &&
                 each.getDaysRented() > 1) frequentRenterPoints++;
-            // この貸し出しに関する数値の表示
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                      String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
-
-        // フッタ部分の追加
-        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        result += "You earned " + String.valueOf(frequentRenterPoints) +
-                  " frequent renter points";
 
         // レンタルの記録
         int rentalId = rentalDataSource.registerRental(name, rentals, totalAmount);
