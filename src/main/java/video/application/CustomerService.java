@@ -15,13 +15,13 @@ public class CustomerService {
         RentalResult result = customer.rentalMovies();
 
         // レンタルの記録
-        int rentalId = rentalDataSource.registerRental(customer.getName(), customer.getRentals(), result.totalAmount());
+        int rentalId = rentalDataSource.registerRental(customer.getName(), customer.rentals().list(), result.totalAmount());
 
         // レンタルポイントの記録
         customerDataSource.registerRentalPoint(customer.getName(), result.frequentRenterPoints());
 
         // レンタルの通知
-        rentalNotificationTransfer.notice(customer.getName(), customer.getRentals());
+        rentalNotificationTransfer.notice(customer.getName(), customer.rentals().list());
 
         return rentalId;
     }
