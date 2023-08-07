@@ -1,9 +1,7 @@
 package video.domain;
 
 import org.junit.jupiter.api.Test;
-import video.infrastructure.datasource.CustomerDataSource;
-import video.infrastructure.datasource.RentalDataSource;
-import video.infrastructure.datasource.data.RentalSummary;
+import video.domain.price.PriceType;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;

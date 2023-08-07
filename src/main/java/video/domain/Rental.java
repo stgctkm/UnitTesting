@@ -1,5 +1,7 @@
 package video.domain;
 
+import video.domain.price.PriceType;
+
 public class Rental {
     private Movie movie;
     private int daysRented;
@@ -22,17 +24,13 @@ public class Rental {
         // 一行ごとに金額を計算
         switch (getMovie().getPriceType()) {
             case REGULAR:
-                thisAmount += 2;
-                if (getDaysRented() > 2)
-                    thisAmount += (getDaysRented() - 2) * 1.5;
+                thisAmount += getMovie().getPriceType().charge(getDaysRented());
                 break;
             case NEW_RELEASE:
-                thisAmount += getDaysRented() * 3;
+                thisAmount += getMovie().getPriceType().charge(getDaysRented());
                 break;
             case CHILDREN:
-                thisAmount += 1.5;
-                if (getDaysRented() > 3)
-                    thisAmount += (getDaysRented() - 3) * 1.5;
+                thisAmount += getMovie().getPriceType().charge(getDaysRented());
                 break;
         }
         return thisAmount;

@@ -1,5 +1,7 @@
 package video.domain;
 
+import video.domain.price.PriceType;
+
 public class Movie {
 
     private String title;
