@@ -1,8 +1,5 @@
 package video.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Customer {
     private String name;
     private Rentals rentals = new Rentals();
@@ -29,16 +26,8 @@ public class Customer {
             double thisAmount = each.charge();
             totalAmount += thisAmount;
         }
-        int frequentRenterPoints = frequentRenterPoints();
+        int frequentRenterPoints = rentals.frequentRenterPoints();
         return new RentalResult(totalAmount, frequentRenterPoints);
-    }
-
-    private int frequentRenterPoints() {
-        int frequentRenterPoints = 0;
-        for (Rental each : rentals.list()) {
-            frequentRenterPoints += each.frequentRenterPoints();
-        }
-        return frequentRenterPoints;
     }
 
 }
