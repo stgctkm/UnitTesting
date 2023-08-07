@@ -21,4 +21,13 @@ public class Rentals {
         }
         return frequentRenterPoints;
     }
+
+    double totalAmount() {
+        double totalAmount = 0;
+        for (Rental each : list()) {
+            double thisAmount = each.charge();
+            totalAmount += thisAmount;
+        }
+        return totalAmount;
+    }
 }
