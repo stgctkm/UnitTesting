@@ -21,13 +21,18 @@ public class Customer {
     }
 
     public RentalResult rentalMovies() {
+        double totalAmount = totalAmount();
+        int frequentRenterPoints = rentals.frequentRenterPoints();
+        return new RentalResult(totalAmount, frequentRenterPoints);
+    }
+
+    private double totalAmount() {
         double totalAmount = 0;
         for (Rental each : rentals.list()) {
             double thisAmount = each.charge();
             totalAmount += thisAmount;
         }
-        int frequentRenterPoints = rentals.frequentRenterPoints();
-        return new RentalResult(totalAmount, frequentRenterPoints);
+        return totalAmount;
     }
 
 }
