@@ -1,7 +1,7 @@
 package video.application;
 
 import video.domain.Customer;
-import video.domain.RentalResult;
+import video.domain.rental.RentalResult;
 import video.infrastructure.datasource.CustomerDataSource;
 import video.infrastructure.datasource.RentalDataSource;
 import video.infrastructure.transfer.RentalNotificationTransfer;

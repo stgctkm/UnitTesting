@@ -1,6 +1,6 @@
 package video.infrastructure.datasource;
 
-import video.domain.Rental;
+import video.domain.rental.Rental;
 import video.infrastructure.datasource.data.RentalItem;
 import video.infrastructure.datasource.data.RentalRecord;
 import video.infrastructure.datasource.data.RentalSummary;

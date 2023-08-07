@@ -1,5 +1,9 @@
 package video.domain;
 
+import video.domain.rental.Rental;
+import video.domain.rental.RentalResult;
+import video.domain.rental.Rentals;
+
 public class Customer {
     private String name;
     private Rentals rentals = new Rentals();
@@ -21,9 +25,7 @@ public class Customer {
     }
 
     public RentalResult rentalMovies() {
-        double totalAmount = rentals.totalAmount();
-        int frequentRenterPoints = rentals.frequentRenterPoints();
-        return new RentalResult(totalAmount, frequentRenterPoints);
+        return new RentalResult(rentals);
     }
 
 }

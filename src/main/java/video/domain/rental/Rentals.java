@@ -1,4 +1,4 @@
-package video.domain;
+package video.domain.rental;
 
 import java.util.ArrayList;
 import java.util.List;

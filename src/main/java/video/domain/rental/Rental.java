@@ -1,4 +1,4 @@
-package video.domain;
+package video.domain.rental;
 
 import video.domain.movie.Movie;
 
