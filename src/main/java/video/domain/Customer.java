@@ -28,8 +28,10 @@ public class Customer {
         int frequentRenterPoints = 0;
         for (Rental each : rentals.list()) {
             double thisAmount = each.charge();
-            frequentRenterPoints += each.frequentRenterPoints();
             totalAmount += thisAmount;
+        }
+        for (Rental each : rentals.list()) {
+            frequentRenterPoints += each.frequentRenterPoints();
         }
         return new RentalResult(totalAmount, frequentRenterPoints);
     }
