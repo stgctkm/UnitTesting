@@ -20,20 +20,7 @@ public class Rental {
     }
 
     double charge() {
-        double thisAmount = 0;
-        // 一行ごとに金額を計算
-        switch (getMovie().getPriceType()) {
-            case REGULAR:
-                thisAmount += getMovie().getPriceType().charge(getDaysRented());
-                break;
-            case NEW_RELEASE:
-                thisAmount += getMovie().getPriceType().charge(getDaysRented());
-                break;
-            case CHILDREN:
-                thisAmount += getMovie().getPriceType().charge(getDaysRented());
-                break;
-        }
-        return thisAmount;
+        return getMovie().getPriceType().charge(getDaysRented());
     }
 
     int frequentRenterPoints() {
