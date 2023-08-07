@@ -25,11 +25,11 @@ public class Customer {
 
     public RentalResult rentalMovies() {
         double totalAmount = 0;
-        int frequentRenterPoints = 0;
         for (Rental each : rentals.list()) {
             double thisAmount = each.charge();
             totalAmount += thisAmount;
         }
+        int frequentRenterPoints = 0;
         for (Rental each : rentals.list()) {
             frequentRenterPoints += each.frequentRenterPoints();
         }
