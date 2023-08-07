@@ -27,7 +27,7 @@ public class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         for (Rental each : rentals) {
-            double thisAmount = each.amountFor();
+            double thisAmount = each.charge();
             // レンタルポイントを加算
             frequentRenterPoints++;
             // 新作を二日以上借りた場合はボーナスポイント

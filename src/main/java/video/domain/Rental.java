@@ -17,7 +17,7 @@ public class Rental {
         return movie;
     }
 
-    double amountFor() {
+    double charge() {
         double thisAmount = 0;
         // 一行ごとに金額を計算
         switch (getMovie().getPriceType()) {
