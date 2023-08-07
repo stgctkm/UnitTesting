@@ -1,6 +1,7 @@
 package video.domain;
 
-import video.domain.price.PriceType;
+import video.domain.movie.Movie;
+import video.domain.movie.MovieType;
 
 public class Rental {
     private Movie movie;
@@ -26,7 +27,7 @@ public class Rental {
     int frequentRenterPoints() {
         // レンタルポイントを加算
         // 新作を二日以上借りた場合はボーナスポイント
-        if ((getMovie().getPriceType() == PriceType.NEW_RELEASE) &&
+        if ((getMovie().getPriceType() == MovieType.NEW_RELEASE) &&
             getDaysRented() > 1) return 2;
         return 1;
     }

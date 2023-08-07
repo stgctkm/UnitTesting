@@ -2,7 +2,8 @@ package video.application;
 
 import org.junit.jupiter.api.Test;
 import video.domain.*;
-import video.domain.price.PriceType;
+import video.domain.movie.Movie;
+import video.domain.movie.MovieType;
 import video.infrastructure.datasource.CustomerDataSource;
 import video.infrastructure.datasource.RentalDataSource;
 import video.infrastructure.datasource.data.RentalSummary;
@@ -14,9 +15,9 @@ public class CustomerServiceTest {
     CustomerDataSource customerDataSource = new CustomerDataSource();
     RentalDataSource rentalDataSource = new RentalDataSource();
 
-    Movie 子供用作品_となりのトトロ = new Movie("となりのトトロ", PriceType.CHILDREN);
-    Movie 旧作_トップガン = new Movie("トップガン", PriceType.REGULAR);
-    Movie 新作_君たちはどう生きるか = new Movie("君たちはどう生きるか", PriceType.NEW_RELEASE);
+    Movie 子供用作品_となりのトトロ = new Movie("となりのトトロ", MovieType.CHILDREN);
+    Movie 旧作_トップガン = new Movie("トップガン", MovieType.REGULAR);
+    Movie 新作_君たちはどう生きるか = new Movie("君たちはどう生きるか", MovieType.NEW_RELEASE);
 
     @Test
     void 新作と旧作ビデオのレンタル() {

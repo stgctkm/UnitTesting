@@ -1,13 +1,18 @@
-package video.domain.price;
+package video.domain.movie;
 
-public enum PriceType {
+import video.domain.price.ChildrenPrice;
+import video.domain.price.NewReleasePrice;
+import video.domain.price.Price;
+import video.domain.price.RegularPrice;
+
+public enum MovieType {
     CHILDREN(new ChildrenPrice()),
     REGULAR(new RegularPrice()),
     NEW_RELEASE(new NewReleasePrice());
 
     Price price;
 
-    PriceType(Price price) {
+    MovieType(Price price) {
         this.price = price;
     }
 
