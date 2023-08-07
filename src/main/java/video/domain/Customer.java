@@ -38,7 +38,7 @@ public class Customer {
         return new RentalResult(totalAmount, frequentRenterPoints);
     }
 
-    private static double amountFor(Rental each) {
+    private double amountFor(Rental each) {
         double thisAmount = 0;
         // 一行ごとに金額を計算
         switch (each.getMovie().getPriceType()) {
