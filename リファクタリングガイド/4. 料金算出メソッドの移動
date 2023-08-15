@@ -1,0 +1,85 @@
+# 料金算出メソッドの移動
+
+抽出したメソッド `amount(Rental each)` は引数の`Rental`クラスのみを使っているので、
+Rentalクラスへ `メソッドの移動` をします。
+
+Customer.java
+```java
+public class Customer {
+    private String name;
+    private List<Rental> rentals = new ArrayList<>();
+
+    public Customer(String name) {
+        this.name = name;
+    }
+
+    public void addRental(Rental rental) {
+        rentals.add(rental);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Rental> getRentals() {
+        return rentals;
+    }
+
+    public RentalResult rentalMovies() {
+        double totalAmount = 0;
+        int frequentRenterPoints = 0;
+        for (Rental each : rentals) {
+            double thisAmount = each.amount();
+            // レンタルポイントを加算
+            frequentRenterPoints++;
+            // 新作を二日以上借りた場合はボーナスポイント
+            if ((each.getMovie().getPriceType() == PriceType.NEW_RELEASE) &&
+                each.getDaysRented() > 1) frequentRenterPoints++;
+            totalAmount += thisAmount;
+        }
+        return new RentalResult(totalAmount, frequentRenterPoints);
+    }
+}
+```
+
+Rental.java
+```java
+public class Rental {
+    private Movie movie;
+    private int daysRented;
+
+    public Rental(Movie movie, int daysRented) {
+        this.movie = movie;
+        this.daysRented = daysRented;
+    }
+
+    public int getDaysRented() {
+        return daysRented;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    double amount() {
+        double thisAmount = 0;
+        // 一行ごとに金額を計算
+        switch (getMovie().getPriceType()) {
+            case REGULAR:
+                thisAmount += 2;
+                if (getDaysRented() > 2)
+                    thisAmount += (getDaysRented() - 2) * 1.5;
+                break;
+            case NEW_RELEASE:
+                thisAmount += getDaysRented() * 3;
+                break;
+            case CHILDREN:
+                thisAmount += 1.5;
+                if (getDaysRented() > 3)
+                    thisAmount += (getDaysRented() - 3) * 1.5;
+                break;
+        }
+        return thisAmount;
+    }
+}
+```
