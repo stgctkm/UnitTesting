@@ -1,7 +1,8 @@
 # レンタルポイント算出メソッド移動後のテスト
 
 RentalTest.java
-```
+
+```java
 package video.domain;
 
 import org.junit.jupiter.api.Nested;
