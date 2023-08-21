@@ -18,7 +18,7 @@ class CustomerTest {
         RentalResult result = sut.rentalMovies();
 
         assertAll(() -> {
-            assertEquals(12, result.totalAmount());
+            assertEquals(1200, result.totalAmount());
             assertEquals(2, result.frequentRenterPoints());
         });
     }
@@ -31,7 +31,7 @@ class CustomerTest {
         RentalResult result = sut.rentalMovies();
 
         assertAll(() -> {
-            assertEquals(3, result.totalAmount());
+            assertEquals(300, result.totalAmount());
             assertEquals(1, result.frequentRenterPoints());
         });
     }
@@ -44,7 +44,7 @@ class CustomerTest {
         RentalResult result = sut.rentalMovies();
 
         assertAll(() -> {
-            assertEquals(2, result.totalAmount());
+            assertEquals(200, result.totalAmount());
             assertEquals(1, result.frequentRenterPoints());
         });
     }
@@ -57,7 +57,7 @@ class CustomerTest {
         RentalResult result = sut.rentalMovies();
 
         assertAll(() -> {
-            assertEquals(3.5, result.totalAmount());
+            assertEquals(350, result.totalAmount());
             assertEquals(1, result.frequentRenterPoints());
         });
     }
@@ -70,7 +70,7 @@ class CustomerTest {
         RentalResult result = sut.rentalMovies();
 
         assertAll(() -> {
-            assertEquals(3, result.totalAmount());
+            assertEquals(300, result.totalAmount());
             assertEquals(1, result.frequentRenterPoints());
         });
     }
@@ -83,7 +83,7 @@ class CustomerTest {
         RentalResult result = sut.rentalMovies();
 
         assertAll(() -> {
-            assertEquals(1.5, result.totalAmount());
+            assertEquals(150, result.totalAmount());
             assertEquals(1, result.frequentRenterPoints());
         });
     }
@@ -97,7 +97,7 @@ class CustomerTest {
         RentalResult result = sut.rentalMovies();
 
         assertAll(() -> {
-            assertEquals(30.5, result.totalAmount());
+            assertEquals(3050, result.totalAmount());
             assertEquals(3, result.frequentRenterPoints());
         });
     }
@@ -111,7 +111,7 @@ class CustomerTest {
         RentalResult result = sut.rentalMovies();
 
         assertAll(() -> {
-            assertEquals(17.0, result.totalAmount());
+            assertEquals(1700, result.totalAmount());
             assertEquals(2, result.frequentRenterPoints());
         });
     }
