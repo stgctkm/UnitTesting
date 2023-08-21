@@ -1,19 +1,11 @@
 package video.domain;
 
-import video.infrastructure.datasource.CustomerDataSource;
-import video.infrastructure.datasource.RentalDataSource;
-import video.infrastructure.transfer.RentalNotificationTransfer;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
     private String name;
     private List<Rental> rentals = new ArrayList<>();
-
-    RentalDataSource rentalDataSource = new RentalDataSource();
-    CustomerDataSource customerDataSource = new CustomerDataSource();
-    RentalNotificationTransfer rentalNotificationTransfer = new RentalNotificationTransfer();
 
     public Customer(String name) {
         this.name = name;
@@ -27,11 +19,15 @@ public class Customer {
         return name;
     }
 
-    public int rentalMovies() {
+    public List<Rental> getRentals() {
+        return rentals;
+    }
+
+    public RentalResult rentalMovies() {
         int totalAmount = 0;
         int frequentRenterPoints = 0;
         for (Rental each : rentals) {
-            double thisAmount = 0;
+            int thisAmount = 0;
             // 一行ごとに金額を計算
             switch (each.getMovie().getPriceType()) {
                 case REGULAR:
@@ -56,15 +52,6 @@ public class Customer {
             totalAmount += thisAmount;
         }
 
-        // レンタルの記録
-        int rentalId = rentalDataSource.registerRental(name, rentals, totalAmount);
-
-        // レンタルポイントの記録
-        customerDataSource.registerRentalPoint(name, frequentRenterPoints);
-
-        // レンタルの通知
-        rentalNotificationTransfer.notice(name, rentals);
-
-        return rentalId;
+        return new RentalResult(totalAmount, frequentRenterPoints);
     }
 }
