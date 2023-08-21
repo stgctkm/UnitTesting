@@ -26,7 +26,7 @@ class CustomerTest {
 
         RentalSummary rentalSummary = rentalDataSource.rentalRecordOf(rentalId);
         assertAll(() -> {
-            assertEquals(12, rentalSummary.rentalRecord().totalAmount());
+            assertEquals(1200, rentalSummary.rentalRecord().totalAmount());
 
             assertEquals(2, customerDataSource.pointOf(customer.getName()));
         });
@@ -42,7 +42,7 @@ class CustomerTest {
 
         RentalSummary rentalSummary = rentalDataSource.rentalRecordOf(rentalId);
         assertAll(() -> {
-            assertEquals(3, rentalSummary.rentalRecord().totalAmount());
+            assertEquals(300, rentalSummary.rentalRecord().totalAmount());
 
             assertEquals(1, customerDataSource.pointOf(customer.getName()));
         });
@@ -58,7 +58,7 @@ class CustomerTest {
 
         RentalSummary rentalSummary = rentalDataSource.rentalRecordOf(rentalId);
         assertAll(() -> {
-            assertEquals(2, rentalSummary.rentalRecord().totalAmount());
+            assertEquals(200, rentalSummary.rentalRecord().totalAmount());
 
             assertEquals(1, customerDataSource.pointOf(customer.getName()));
         });
@@ -74,7 +74,7 @@ class CustomerTest {
 
         RentalSummary rentalSummary = rentalDataSource.rentalRecordOf(rentalId);
         assertAll(() -> {
-            assertEquals(3.5, rentalSummary.rentalRecord().totalAmount());
+            assertEquals(350, rentalSummary.rentalRecord().totalAmount());
 
             assertEquals(1, customerDataSource.pointOf(customer.getName()));
         });
@@ -90,7 +90,7 @@ class CustomerTest {
 
         RentalSummary rentalSummary = rentalDataSource.rentalRecordOf(rentalId);
         assertAll(() -> {
-            assertEquals(3, rentalSummary.rentalRecord().totalAmount());
+            assertEquals(300, rentalSummary.rentalRecord().totalAmount());
 
             assertEquals(1, customerDataSource.pointOf(customer.getName()));
         });
@@ -98,7 +98,7 @@ class CustomerTest {
 
     @Test
     void 子供用作品を3日レンタル() {
-        Customer customer = new Customer("広末涼子");
+        Customer customer = new Customer("広川京子");
 
         customer.addRental(new Rental(子供用作品_となりのトトロ, 3));
 
@@ -106,7 +106,7 @@ class CustomerTest {
 
         RentalSummary rentalSummary = rentalDataSource.rentalRecordOf(rentalId);
         assertAll(() -> {
-            assertEquals(1.5, rentalSummary.rentalRecord().totalAmount());
+            assertEquals(150, rentalSummary.rentalRecord().totalAmount());
 
             assertEquals(1, customerDataSource.pointOf(customer.getName()));
         });
@@ -123,7 +123,7 @@ class CustomerTest {
 
         RentalSummary rentalSummary = rentalDataSource.rentalRecordOf(rentalId);
         assertAll(() -> {
-            assertEquals(30.5, rentalSummary.rentalRecord().totalAmount());
+            assertEquals(3050, rentalSummary.rentalRecord().totalAmount());
             assertEquals(2, rentalSummary.rentalItems().size());
 
             assertEquals(3, customerDataSource.pointOf(customer.getName()));
@@ -141,7 +141,7 @@ class CustomerTest {
 
         RentalSummary rentalSummary = rentalDataSource.rentalRecordOf(rentalId);
         assertAll(() -> {
-            assertEquals(17.0, rentalSummary.rentalRecord().totalAmount());
+            assertEquals(1700, rentalSummary.rentalRecord().totalAmount());
             assertEquals(2, rentalSummary.rentalItems().size());
 
             assertEquals(2, customerDataSource.pointOf(customer.getName()));

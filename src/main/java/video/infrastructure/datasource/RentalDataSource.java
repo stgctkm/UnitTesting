@@ -22,7 +22,7 @@ public class RentalDataSource {
     /**
      * レンタルの記録
      */
-    public int registerRental(String customerName, List<Rental> rentals, double totalAmount) {
+    public int registerRental(String customerName, List<Rental> rentals, int totalAmount) {
 
         int rentalId = rentalNumber.incrementAndGet();
         rentalRecords.put(rentalId, new RentalRecord(customerName, totalAmount));

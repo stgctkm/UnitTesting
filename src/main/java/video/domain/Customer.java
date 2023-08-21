@@ -28,24 +28,24 @@ public class Customer {
     }
 
     public int rentalMovies() {
-        double totalAmount = 0;
+        int totalAmount = 0;
         int frequentRenterPoints = 0;
         for (Rental each : rentals) {
             double thisAmount = 0;
             // 一行ごとに金額を計算
             switch (each.getMovie().getPriceType()) {
                 case REGULAR:
-                    thisAmount += 2;
+                    thisAmount += 200;
                     if (each.getDaysRented() > 2)
-                        thisAmount += (each.getDaysRented() - 2) * 1.5;
+                        thisAmount += (each.getDaysRented() - 2) * 150;
                     break;
                 case NEW_RELEASE:
-                    thisAmount += each.getDaysRented() * 3;
+                    thisAmount += each.getDaysRented() * 300;
                     break;
                 case CHILDREN:
-                    thisAmount += 1.5;
+                    thisAmount += 150;
                     if (each.getDaysRented() > 3)
-                        thisAmount += (each.getDaysRented() - 3) * 1.5;
+                        thisAmount += (each.getDaysRented() - 3) * 150;
                     break;
             }
             // レンタルポイントを加算
