@@ -31,7 +31,7 @@ public class Customer {
         int totalAmount = 0;
         int frequentRenterPoints = 0;
         for (Rental each : rentals) {
-            double thisAmount = 0;
+            int thisAmount = 0;
             // 一行ごとに金額を計算
             switch (each.getMovie().getPriceType()) {
                 case REGULAR:
