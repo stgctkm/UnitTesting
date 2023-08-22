@@ -33,7 +33,7 @@ public class Rental {
     }
 
     private int amount(int daysRented) {
-        switch (getMovie().getPriceType()) {
+        switch (movie.getPriceType()) {
             case REGULAR:
                 return regularPrice.amount(daysRented);
             case NEW_RELEASE:
