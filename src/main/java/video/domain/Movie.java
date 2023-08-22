@@ -3,20 +3,20 @@ package video.domain;
 public class Movie {
 
     private String title;
-    PriceType priceType;
+    MovieType movieType;
 
 
-    public Movie(String title, PriceType priceType) {
+    public Movie(String title, MovieType movieType) {
         this.title = title;
-        this.priceType = priceType;
+        this.movieType = movieType;
     }
 
-    public PriceType getPriceType() {
-        return priceType;
+    public MovieType getPriceType() {
+        return movieType;
     }
 
-    public void setPriceType(PriceType priceType) {
-        this.priceType = priceType;
+    public void setPriceType(MovieType movieType) {
+        this.movieType = movieType;
     }
 
     public String getTitle() {
@@ -24,10 +24,10 @@ public class Movie {
     }
 
     public int amount(int daysRented) {
-        return priceType.amount(daysRented);
+        return movieType.amount(daysRented);
     }
 
     public int frequentRenterPoints(int daysRented) {
-        return priceType.frequentRenterPoints(daysRented);
+        return movieType.frequentRenterPoints(daysRented);
     }
 }

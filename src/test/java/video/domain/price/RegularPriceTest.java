@@ -2,14 +2,14 @@ package video.domain.price;
 
 import org.junit.jupiter.api.Test;
 import video.domain.Movie;
-import video.domain.PriceType;
+import video.domain.MovieType;
 import video.domain.rental.Rental;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RegularPriceTest {
 
-    Movie 旧作_トップガン = new Movie("トップガン", PriceType.REGULAR);
+    Movie 旧作_トップガン = new Movie("トップガン", MovieType.REGULAR);
 
     @Test
     void 旧作を2日のレンタル料金() {

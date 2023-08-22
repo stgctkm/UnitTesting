@@ -9,7 +9,7 @@ import video.domain.price.NewReleasePrice;
 import video.domain.price.Price;
 import video.domain.price.RegularPrice;
 
-public enum PriceType {
+public enum MovieType {
     CHILDREN(new ChildrenPrice(), new ChildrenPoint()),
     REGULAR(new RegularPrice(), new RegularPoint()),
     NEW_RELEASE(new NewReleasePrice(), new NewReleasePoint());
@@ -17,7 +17,7 @@ public enum PriceType {
     Price price;
     Point point;
 
-    PriceType(Price price, Point point) {
+    MovieType(Price price, Point point) {
         this.price = price;
         this.point = point;
     }
