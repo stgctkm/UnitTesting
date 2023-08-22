@@ -1,6 +1,7 @@
 package video.infrastructure.datasource;
 
 import video.domain.Rental;
+import video.domain.Rentals;
 import video.infrastructure.datasource.data.RentalItem;
 import video.infrastructure.datasource.data.RentalRecord;
 import video.infrastructure.datasource.data.RentalSummary;
@@ -22,12 +23,12 @@ public class RentalDataSource {
     /**
      * レンタルの記録
      */
-    public int registerRental(String customerName, List<Rental> rentals, int totalAmount) {
+    public int registerRental(String customerName, Rentals rentals, int totalAmount) {
 
         int rentalId = rentalNumber.incrementAndGet();
         rentalRecords.put(rentalId, new RentalRecord(customerName, totalAmount));
         ArrayList<RentalItem> items = new ArrayList<>();
-        for (Rental rental : rentals) {
+        for (Rental rental : rentals.list()) {
             items.add(new RentalItem(rental.getMovie(), rental.getDaysRented()));
         }
         rentalItems.put(rentalId, items);
