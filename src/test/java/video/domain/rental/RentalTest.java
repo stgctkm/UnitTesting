@@ -2,8 +2,8 @@ package video.domain.rental;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import video.domain.Movie;
-import video.domain.MovieType;
+import video.domain.movie.Movie;
+import video.domain.movie.MovieType;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

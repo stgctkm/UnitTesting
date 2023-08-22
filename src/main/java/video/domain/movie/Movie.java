@@ -1,4 +1,4 @@
-package video.domain;
+package video.domain.movie;
 
 public class Movie {
 

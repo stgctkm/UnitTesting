@@ -1,4 +1,4 @@
-package video.domain;
+package video.domain.movie;
 
 import video.domain.point.ChildrenPoint;
 import video.domain.point.NewReleasePoint;

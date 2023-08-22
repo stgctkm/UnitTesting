@@ -1,8 +1,8 @@
 package video.domain.price;
 
 import org.junit.jupiter.api.Test;
-import video.domain.Movie;
-import video.domain.MovieType;
+import video.domain.movie.Movie;
+import video.domain.movie.MovieType;
 import video.domain.rental.Rental;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
