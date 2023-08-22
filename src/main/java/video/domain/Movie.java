@@ -27,4 +27,7 @@ public class Movie {
         return priceType.amount(daysRented);
     }
 
+    public int frequentRenterPoints(int daysRented) {
+        return priceType.frequentRenterPoints(daysRented);
+    }
 }
