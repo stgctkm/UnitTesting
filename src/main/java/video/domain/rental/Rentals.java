@@ -13,4 +13,21 @@ public class Rentals {
     public List<Rental> list() {
         return list;
     }
+
+    public int totalAmount() {
+        int totalAmount = 0;
+        for (Rental each : list()) {
+            int thisAmount = each.amount();
+            totalAmount += thisAmount;
+        }
+        return totalAmount;
+    }
+
+    public int frequentRenterPoints() {
+        int frequentRenterPoints = 0;
+        for (Rental each : list()) {
+            frequentRenterPoints += each.frequentRenterPoints();
+        }
+        return frequentRenterPoints;
+    }
 }
