@@ -26,12 +26,17 @@ public class Customer {
     public RentalResult rentalMovies() {
         int totalAmount = totalAmount();
 
+        int frequentRenterPoints = frequentRenterPoints();
+
+        return new RentalResult(totalAmount, frequentRenterPoints);
+    }
+
+    private int frequentRenterPoints() {
         int frequentRenterPoints = 0;
         for (Rental each : rentals.list()) {
             frequentRenterPoints += each.frequentRenterPoints();
         }
-
-        return new RentalResult(totalAmount, frequentRenterPoints);
+        return frequentRenterPoints;
     }
 
     private int totalAmount() {
