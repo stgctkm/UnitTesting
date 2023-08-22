@@ -2,8 +2,8 @@ package video.infrastructure.transfer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import video.domain.Rental;
-import video.domain.Rentals;
+import video.domain.rental.Rental;
+import video.domain.rental.Rentals;
 
 public class RentalNotificationTransfer {
 

@@ -1,5 +1,8 @@
 package video.domain;
 
+import video.domain.rental.Rental;
+import video.domain.rental.Rentals;
+
 public class Customer {
     private String name;
     private Rentals rentals = new Rentals();
