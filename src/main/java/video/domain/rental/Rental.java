@@ -21,24 +21,19 @@ public class Rental {
     }
 
     public int amount() {
-        int thisAmount = 0;
         // 金額を計算
         switch (getMovie().getPriceType()) {
             case REGULAR:
-                thisAmount += 200;
-                if (getDaysRented() > 2)
-                    thisAmount += (getDaysRented() - 2) * 150;
-                break;
+                if (getDaysRented() <= 2) return 200;
+                return 200 + (getDaysRented() - 2) * 150;
             case NEW_RELEASE:
-                thisAmount += getDaysRented() * 300;
-                break;
+                return getDaysRented() * 300;
             case CHILDREN:
-                thisAmount += 150;
-                if (getDaysRented() > 3)
-                    thisAmount += (getDaysRented() - 3) * 150;
-                break;
+                if (getDaysRented() <= 3) return 150;
+                return 150 + (getDaysRented() - 3) * 150;
+            default:
+                throw new RuntimeException("ビデオの区分が誤っています");
         }
-        return thisAmount;
     }
 
     public int frequentRenterPoints() {
