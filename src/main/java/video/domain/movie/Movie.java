@@ -11,14 +11,6 @@ public class Movie {
         this.movieType = movieType;
     }
 
-    public MovieType getPriceType() {
-        return movieType;
-    }
-
-    public void setPriceType(MovieType movieType) {
-        this.movieType = movieType;
-    }
-
     public String getTitle() {
         return title;
     }
