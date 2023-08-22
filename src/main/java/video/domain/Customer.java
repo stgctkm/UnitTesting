@@ -26,7 +26,7 @@ public class Customer {
     public RentalResult rentalMovies() {
         int totalAmount = rentals.totalAmount();
 
-        int frequentRenterPoints = rentals.frequentRenterPoints();
+        int frequentRenterPoints = rentals.totalFrequentRenterPoints();
 
         return new RentalResult(totalAmount, frequentRenterPoints);
     }

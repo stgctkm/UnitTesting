@@ -23,7 +23,7 @@ public class Rentals {
         return totalAmount;
     }
 
-    public int frequentRenterPoints() {
+    public int totalFrequentRenterPoints() {
         int frequentRenterPoints = 0;
         for (Rental each : list()) {
             frequentRenterPoints += each.frequentRenterPoints();
