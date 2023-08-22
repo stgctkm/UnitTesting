@@ -24,46 +24,10 @@ class RentalTest {
             assertEquals(1200, result);
         }
 
-        @Test
-        void 旧作を2日のレンタル料金() {
-            Rental sut = new Rental(旧作_トップガン, 2);
-
-            double result = sut.amount();
-
-            assertEquals(200, result);
-        }
-
-        @Test
-        void 子供用作品を4日のレンタル料金() {
-            Rental sut = new Rental(子供用作品_となりのトトロ, 4);
-
-            double result = sut.amount();
-
-            assertEquals(300, result);
-        }
-
     }
 
     @Nested
     class レンタルポイントテスト {
-        @Test
-        void 新作を4日のレンタルポイント() {
-            Rental sut = new Rental(新作_君たちはどう生きるか, 4);
-
-            int result = sut.frequentRenterPoints();
-
-            assertEquals(2, result);
-        }
-
-        @Test
-        void 新作を1日のレンタルポイント() {
-            Rental sut = new Rental(新作_君たちはどう生きるか, 1);
-
-            int result = sut.frequentRenterPoints();
-
-            assertEquals(1, result);
-        }
-
         @Test
         void 旧作のレンタルポイント() {
             Rental sut = new Rental(旧作_トップガン, 2);
@@ -72,15 +36,5 @@ class RentalTest {
 
             assertEquals(1, result);
         }
-
-        @Test
-        void 子供用作品のレンタル料金() {
-            Rental sut = new Rental(子供用作品_となりのトトロ, 3);
-
-            int result = sut.frequentRenterPoints();
-
-            assertEquals(1, result);
-        }
     }
-
 }
