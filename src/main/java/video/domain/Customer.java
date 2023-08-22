@@ -28,15 +28,18 @@ public class Customer {
         int frequentRenterPoints = 0;
         for (Rental each : rentals) {
             int thisAmount = each.amount();
-            // レンタルポイントを加算
-            frequentRenterPoints++;
-            // 新作を二日以上借りた場合はボーナスポイント
-            if ((each.getMovie().getPriceType() == PriceType.NEW_RELEASE) &&
-                each.getDaysRented() > 1) frequentRenterPoints++;
+            frequentRenterPoints += frequentRenterPoints(each);
             totalAmount += thisAmount;
         }
 
         return new RentalResult(totalAmount, frequentRenterPoints);
+    }
+
+    private int frequentRenterPoints(Rental each) {
+        // 新作を二日以上借りた場合はボーナスポイント
+        if ((each.getMovie().getPriceType() == PriceType.NEW_RELEASE) &&
+            each.getDaysRented() > 1) return 2;
+        return 1;
     }
 
 }
