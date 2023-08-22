@@ -24,11 +24,7 @@ public class Customer {
     }
 
     public RentalResult rentalMovies() {
-        int totalAmount = 0;
-        for (Rental each : rentals.list()) {
-            int thisAmount = each.amount();
-            totalAmount += thisAmount;
-        }
+        int totalAmount = totalAmount();
 
         int frequentRenterPoints = 0;
         for (Rental each : rentals.list()) {
@@ -36,6 +32,15 @@ public class Customer {
         }
 
         return new RentalResult(totalAmount, frequentRenterPoints);
+    }
+
+    private int totalAmount() {
+        int totalAmount = 0;
+        for (Rental each : rentals.list()) {
+            int thisAmount = each.amount();
+            totalAmount += thisAmount;
+        }
+        return totalAmount;
     }
 
 }
