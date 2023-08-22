@@ -23,7 +23,7 @@ public class Movie {
         return title;
     }
 
-    public int movieAmount(int daysRented) {
+    public int amount(int daysRented) {
         return priceType.amount(daysRented);
     }
 
