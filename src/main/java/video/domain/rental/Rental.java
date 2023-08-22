@@ -29,7 +29,11 @@ public class Rental {
     public int amount() {
         // 金額を計算
         int daysRented = getDaysRented();
-        switch (getMovie().getPriceType()) {
+        return amount(daysRented);
+    }
+
+    private int amount(int daysRented) {
+        switch (movie.getPriceType()) {
             case REGULAR:
                 return regularPrice.amount(daysRented);
             case NEW_RELEASE:

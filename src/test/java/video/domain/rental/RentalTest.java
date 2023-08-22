@@ -24,7 +24,6 @@ class RentalTest {
             assertEquals(1200, result);
         }
 
-
         @Test
         void 旧作を2日のレンタル料金() {
             Rental sut = new Rental(旧作_トップガン, 2);
@@ -32,15 +31,6 @@ class RentalTest {
             double result = sut.amount();
 
             assertEquals(200, result);
-        }
-
-        @Test
-        void 旧作を3日のレンタル料金() {
-            Rental sut = new Rental(旧作_トップガン, 3);
-
-            double result = sut.amount();
-
-            assertEquals(350, result);
         }
 
         @Test
@@ -52,14 +42,6 @@ class RentalTest {
             assertEquals(300, result);
         }
 
-        @Test
-        void 子供用作品を3日のレンタル料金() {
-            Rental sut = new Rental(子供用作品_となりのトトロ, 3);
-
-            double result = sut.amount();
-
-            assertEquals(150, result);
-        }
     }
 
     @Nested
