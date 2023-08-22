@@ -4,6 +4,9 @@ import video.domain.Movie;
 import video.domain.PriceType;
 
 public class Rental {
+    private final RegularPrice regularPrice = new RegularPrice();
+    private final NewReleasePrice newReleasePrice = new NewReleasePrice();
+    private final ChildrenPrice childrenPrice = new ChildrenPrice();
     private Movie movie;
     private int daysRented;
 
@@ -25,28 +28,14 @@ public class Rental {
         int daysRented = getDaysRented();
         switch (getMovie().getPriceType()) {
             case REGULAR:
-                return regularPrice(daysRented);
+                return regularPrice.price(daysRented);
             case NEW_RELEASE:
-                return newReleasePrice(daysRented);
+                return newReleasePrice.price(daysRented);
             case CHILDREN:
-                return childrenPrice(daysRented);
+                return childrenPrice.price(daysRented);
             default:
                 throw new RuntimeException("ビデオの区分が誤っています");
         }
-    }
-
-    private int regularPrice(int daysRented) {
-        if (daysRented <= 2) return 200;
-        return 200 + (daysRented - 2) * 150;
-    }
-
-    private int newReleasePrice(int daysRented) {
-        return daysRented * 300;
-    }
-
-    private int childrenPrice(int daysRented) {
-        if (daysRented <= 3) return 150;
-        return 150 + (daysRented - 3) * 150;
     }
 
     public int frequentRenterPoints() {
