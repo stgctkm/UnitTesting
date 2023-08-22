@@ -24,7 +24,7 @@ public class Rental {
     public int amount() {
         // 金額を計算
         int daysRented = getDaysRented();
-        return movie.amount(daysRented);
+        return movie.movieAmount(daysRented);
     }
 
     public int frequentRenterPoints() {
