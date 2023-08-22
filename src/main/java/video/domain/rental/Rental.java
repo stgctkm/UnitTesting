@@ -22,18 +22,31 @@ public class Rental {
 
     public int amount() {
         // 金額を計算
+        int daysRented = getDaysRented();
         switch (getMovie().getPriceType()) {
             case REGULAR:
-                if (getDaysRented() <= 2) return 200;
-                return 200 + (getDaysRented() - 2) * 150;
+                return regularPrice(daysRented);
             case NEW_RELEASE:
-                return getDaysRented() * 300;
+                return newReleasePrice(daysRented);
             case CHILDREN:
-                if (getDaysRented() <= 3) return 150;
-                return 150 + (getDaysRented() - 3) * 150;
+                return childrenPrice(daysRented);
             default:
                 throw new RuntimeException("ビデオの区分が誤っています");
         }
+    }
+
+    private int regularPrice(int daysRented) {
+        if (daysRented <= 2) return 200;
+        return 200 + (daysRented - 2) * 150;
+    }
+
+    private int newReleasePrice(int daysRented) {
+        return daysRented * 300;
+    }
+
+    private int childrenPrice(int daysRented) {
+        if (daysRented <= 3) return 150;
+        return 150 + (daysRented - 3) * 150;
     }
 
     public int frequentRenterPoints() {
