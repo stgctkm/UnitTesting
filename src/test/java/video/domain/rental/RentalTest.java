@@ -2,16 +2,16 @@ package video.domain.rental;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import video.domain.Movie;
-import video.domain.PriceType;
+import video.domain.movie.Movie;
+import video.domain.movie.MovieType;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RentalTest {
 
-    Movie 子供用作品_となりのトトロ = new Movie("となりのトトロ", PriceType.CHILDREN);
-    Movie 旧作_トップガン = new Movie("トップガン", PriceType.REGULAR);
-    Movie 新作_君たちはどう生きるか = new Movie("君たちはどう生きるか", PriceType.NEW_RELEASE);
+    Movie 子供用作品_となりのトトロ = new Movie("となりのトトロ", MovieType.CHILDREN);
+    Movie 旧作_トップガン = new Movie("トップガン", MovieType.REGULAR);
+    Movie 新作_君たちはどう生きるか = new Movie("君たちはどう生きるか", MovieType.NEW_RELEASE);
 
     @Nested
     class レンタル料金テスト {

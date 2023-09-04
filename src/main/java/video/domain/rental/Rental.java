@@ -1,6 +1,6 @@
 package video.domain.rental;
 
-import video.domain.Movie;
+import video.domain.movie.Movie;
 
 public class Rental {
 
