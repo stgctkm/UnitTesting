@@ -1,6 +1,7 @@
 package video.domain;
 
 import org.junit.jupiter.api.Test;
+import video.domain.rental.Rental;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;

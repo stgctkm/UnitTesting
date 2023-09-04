@@ -1,11 +1,11 @@
 package video.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import video.domain.rental.Rental;
+import video.domain.rental.Rentals;
 
 public class Customer {
     private String name;
-    private List<Rental> rentals = new ArrayList<>();
+    private Rentals rentals = new Rentals();
 
     public Customer(String name) {
         this.name = name;
@@ -19,14 +19,14 @@ public class Customer {
         return name;
     }
 
-    public List<Rental> getRentals() {
+    public Rentals getRentals() {
         return rentals;
     }
 
     public RentalResult rentalMovies() {
         int totalAmount = 0;
         int frequentRenterPoints = 0;
-        for (Rental each : rentals) {
+        for (Rental each : rentals.list()) {
             int thisAmount = each.amount();
             frequentRenterPoints += each.frequentRenterPoints();
             totalAmount += thisAmount;
